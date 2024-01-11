@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0RMh9eekJVB4Wcl1CiGkXeWBWF3-Fdwl0_Q&usqp=CAU');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: rgba(12, 32, 50, 0.8); /* Adjust the alpha value for transparency */
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            grid-row: 1;
+        }
+
+        .header-buttons a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            margin-left: 10px;
+            position: relative;
+        }
+
+        .header-buttons a:hover {
+            text-decoration: underline;
+        }
+
+        .product-container {
+            max-width: fit-content;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Adjust the alpha value for transparency */
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            grid-row: 2;
+            height: fit-content;
+        }
+
+        .product-image {
+            width: 100%;
+            height: auto;
+            display: grid;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+
+        .product-details {
+            text-align: left;
+        }
+
+        footer {
+            background-color: rgba(12, 32, 50, 0.8); /* Adjust the alpha value for transparency */
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            grid-row: 3;
+        }
+
+        button {
+            background-color: #617487;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .popup {
+            position: fixed;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(106, 65, 65, 0.7);
+            color: #faecec;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>E-Commerce Store</h1>
+        <div class="header-buttons">
+            <a href="#" onclick="showPopup('Help')">Help</a>
+            <a href="#" onclick="showPopup('Feedback')">Feedback</a>
+            <!-- Add more buttons as needed -->
+        </div>
+    </header>
+
+    <div class="product-container">
+        <img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnOZv6OnFgM1te42YEX48Yp8y_4grY84UxOA&usqp=CAU" alt="Product Image">
+        <div class="product-details">
+            <h2>Smart Glasses</h2>
+            <p>Description: Compatable smart glasses from Vision</p>
+            <p>Price: $59.99</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 E-Commerce Store
+    </footer>
+
+    <div class="popup" id="popupMessage"></div>
+
+    <script>
+        function addToCart() {
+            alert('Product added to cart!');
+            // You can add more functionality here, such as updating the cart icon or sending the data to a server.
+        }
+
+        function showPopup(message) {
+            var popup = document.getElementById('popupMessage');
+            popup.innerText = message;
+            popup.style.display = 'block';
+            setTimeout(function () {
+                popup.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+
+</body>
+</html>
